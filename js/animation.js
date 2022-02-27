@@ -14,6 +14,7 @@ $('.lorem').animate({width:'200px'},4000);
   or for changing or getting the value
   $('#selector').val('getting or changing values');
   .empty()
-  
   */
 
+
+  

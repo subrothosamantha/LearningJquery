@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center;" id="well" hidden="true">Well,come to CarDekho</h1>
+    <p id="para">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+         Alias soluta molestiae labore sapiente quis repudiandae in magni veniam blanditiis,
+          nulla aperiam iusto nemo, culpa eos numquam. Vero quos dolores velit totam debitis aut rerum,
+           soluta delectus vel, quod fugit et iste iure deserunt reiciendis, commodi laudantium. Architecto,
+            obcaecati officiis! Illum!</p>
+
+        <div id="ajaxmessage"></div>
+
+
+
+
+   
+ <script src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+   crossorigin="anonymous"></script>
+
+   <script>
+       $(document).ready(function(){
+            // $('#well').show(2000); 
+            // $('#para').slideDown(2000);
+
+            getData();
+
+       });
+
+       function getData(){
+           $.ajax({
+               url:'index.html',
+               type:'GET',
+               dataType:'text',
+               success:'successFunction',
+               error:'errorFunction',
+               complete: (xhr,status)=>{
+                   console.log('This ajax is completed!!!');
+               }
+           });
+       }
+
+      function successFunction(result){
+        console.log('ajax got success!!!');
+        $('#ajaxmessage').append(result);
+       }
+      function errorFunction(){
+        console.log('ajax got error!!!');
+       }
+
+   </script>
+</body>
+</html>
